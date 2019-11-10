@@ -1,0 +1,182 @@
+
+
+.content-wrapper{
+width: 100%;
+max-width: 8.6rem;
+margin: 0 auto;
+}
+
+.projects-section{ 
+padding-top: 210px;
+padding-bottom: 140px;
+}
+.projects-section-heading{
+font-family: 'Gotham Pro Medium', Arial, sans-serif;
+font-size: 48px;
+color: #1a1a1a; 
+position: relative;
+z-index: 50;
+-webkit-transition: color 1s ease;
+transition: color 1s ease;
+}
+.projects-section-heading.animation-element{
+opacity: 0;
+-webkit-transform: translateY(.50rem);
+transform: translateY(.50rem);
+-webkit-transition: opacity 2s ease, -webkit-transform 2s ease;
+transition: opacity 2s ease, -webkit-transform 2s ease;
+transition: transform 2s ease, opacity 2s ease;
+transition: transform 2s ease, opacity 2s ease, -webkit-transform 2s ease;
+}
+.projects-section-heading.animation-element.in-view{
+opacity: 1;
+-webkit-transform: translateY(0);
+transform: translateY(0);
+}
+.projects-section.hovered_item .projects-section-heading{
+color: #fff;
+-webkit-transition: color 1s ease;
+transition: color 1s ease;
+}
+.projects-list{
+position: relative;
+z-index: 50;
+}
+.projects-list > li{
+width: 100%;
+margin: 0 auto;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+.projects-list > li:nth-child(1){padding-top: 100px;}  
+.projects-list-itWrapp .projects-list__item__numb{
+  color: #7e7e7e;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  display: block;
+  font-family: 'Gotham Pro', Arial, sans-serif ;
+}
+.projects-list-itWrapp .projects-list__item__name{
+  position: relative;
+  z-index: 50;
+  font-size: 28px;
+  color: #1a1a1a;
+  font-family: 'Gotham Pro Medium', Arial, sans-serif;
+  -webkit-transition: color 1s ease, opacity 1s ease;
+transition: color 1s ease, opacity 1s ease;
+will-change: transform;
+}
+.projects-list-itWrapp{
+  padding-left: 197px;
+}
+.projects-list-itWrapp{
+display: inline-block;
+}
+.projects-section.hovered_item .projects-list .projects-list-itWrapp .projects-list__item__numb,
+.projects-section.hovered_item .projects-list .projects-list-itWrapp .projects-list__item__name{
+color: #fff;
+opacity: .4;
+-webkit-transition: color 1s ease, opacity 1s ease;
+transition: color 1s ease, opacity 1s ease;
+}
+.projects-section.hovered_item .projects-list > li.hovered .projects-list-itWrapp .projects-list__item__numb,
+.projects-section.hovered_item .projects-list > li.hovered .projects-list-itWrapp .projects-list__item__name{
+color: #fff;
+opacity: 1;
+}   
+
+
+.projects-list > li .projects-list-itWrapp .projects-list__item__name > span{
+display: inline-block;
+position: relative;
+overflow: hidden;
+}
+.projects-list > li .projects-list-itWrapp .projects-list__item__name > span::after{
+content: '';
+display: block;
+width: 200%;
+height: 100%;
+background-color: #fff;
+position: absolute;
+left: 0;
+top: 10%;
+-webkit-transform: translateX(-101%);
+transform: translateX(-101%);
+}
+.projects-list > li:hover .projects-list-itWrapp .projects-list__item__name > span::after{
+-webkit-animation: .4s linkHover ease;
+animation: .4s linkHover ease;    
+}
+
+@-webkit-keyframes linkHover{
+0%{
+-webkit-transform: translateX(-101%);
+transform: translateX(-101%);
+}
+100%{
+-webkit-transform: translateX(51%);
+transform: translateX(51%);
+}
+}
+@keyframes linkHover{
+0%{
+-webkit-transform: translateX(-101%);
+transform: translateX(-101%);
+}
+100%{
+-webkit-transform: translateX(51%);
+transform: translateX(51%);
+}
+} 
+ 
+.projects-preview-fixed-container{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 49;
+pointer-events: none;
+will-change: transform;
+}
+.projects-preview-fixed-container > li{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #1a1a1a;
+opacity: 0;
+-webkit-transition: opacity 1s ease-in;
+transition: opacity 1s ease-in;
+z-index: 1;
+}
+.projects-preview-fixed-container > li::after{
+content: '';
+display: block;
+width: 100%;
+height: 100%;
+background-color: #1a1a1a;
+opacity: .7;
+position: absolute;
+top: 0;
+left: 0;
+}
+.projects-preview-fixed-container > li.visible{
+opacity: 1;
+-webkit-transition: opacity .6s ease;
+transition: opacity .6s ease;
+z-index: 2;
+}
+.projects-preview-fixed-container > li > video{
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+font-family: 'object-fit: cover;';
+position: absolute;
+top: 0;  
+left: 0;
+} 
+ 
